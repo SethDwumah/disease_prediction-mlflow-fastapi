@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/USER/Documents/mlproject/sym-disease/mlruns/794458357329933339/models/m-e066c3f576b44e05ba605dd3f467e3ad/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 3.4.0
+model_id: m-e066c3f576b44e05ba605dd3f467e3ad
+model_size_bytes: 521465
+model_uuid: m-e066c3f576b44e05ba605dd3f467e3ad
+prompts: null
+run_id: 0af2d609e3144a43a67d7d8afc7d2cb3
+utc_time_created: '2025-10-05 14:51:19.540269'

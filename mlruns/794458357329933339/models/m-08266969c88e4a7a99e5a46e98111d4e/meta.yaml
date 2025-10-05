@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/USER/Documents/mlproject/sym-disease/mlruns/794458357329933339/models/m-08266969c88e4a7a99e5a46e98111d4e/artifacts
+creation_timestamp: 1759673242265
+experiment_id: '794458357329933339'
+last_updated_timestamp: 1759673254770
+model_id: m-08266969c88e4a7a99e5a46e98111d4e
+model_type: null
+name: model
+source_run_id: null
+status: 2
+status_message: null
