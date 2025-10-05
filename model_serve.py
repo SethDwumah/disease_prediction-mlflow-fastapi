@@ -14,7 +14,7 @@ from feature_processing import *
 class InputData(BaseModel):
     text: str
 
-app = FastAPI()
+app = FastAPI(title="Symptom-Disease API")
 
 model_url = "models:/Symptom-Disease-MNB/5" #version 5
 load_model = mlflow.sklearn.load_model(model_url)
