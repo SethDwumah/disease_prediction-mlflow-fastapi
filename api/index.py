@@ -6,7 +6,7 @@ import os
 from pydantic import BaseModel
 from typing import List
 from datetime import datetime
-import pickle
+import joblib
 import mlflow
 from feature_processing import *
 # Define input schema
@@ -19,8 +19,8 @@ app = FastAPI()
 model_url = "models:/Symptom-Disease-MNB/5" #version 5
 load_model = mlflow.sklearn.load_model(model_url)
 
-vect = pickle.load(open('Vectorizer.pkl','rb'))
-lab_encoder = pickle.load(open('label_encoder.pkl','rb'))
+vect = joblib.load('Vectorizer.pkl','rb')
+lab_encoder = joblib.load('label_encoder.pkl','rb')
 
 
 @app.get("/")

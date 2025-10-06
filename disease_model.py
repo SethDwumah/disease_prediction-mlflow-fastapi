@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split
 from feature_processing import clean_text
@@ -59,9 +59,9 @@ with mlflow.start_run(experiment_id=sym_xp.experiment_id):
     vectorizer_path = "Vectorizer.pkl"
     label_en_path = "label_encoder.pkl"
     with open(vectorizer_path, "wb") as f:
-        pickle.dump(vector, f)
+        joblib.dump(vector, f)
     with open(label_en_path, "wb") as f:
-        pickle.dump(label_encoder, f)
+        joblib.dump(label_encoder, f)
 
     # Log params/metrics/artifacts **inside** the active run
     mlflow.log_params({
