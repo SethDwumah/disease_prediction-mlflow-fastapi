@@ -1,6 +1,5 @@
 # model_serve.py
 from fastapi import FastAPI
-import pandas as pd
 import os
 from pydantic import BaseModel
 from typing import List
