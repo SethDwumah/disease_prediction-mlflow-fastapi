@@ -15,12 +15,14 @@ class InputData(BaseModel):
 
 app = FastAPI()
 
-model_url = "models:/Symptom-Disease-MNB/5" #version 5
-load_model = mlflow.sklearn.load_model(model_url)
+# Load model from MLflow Registry
+MODEL_URI = "models:/Symptom-Disease-MNB/5"   # <-- no /api/ prefix
+model = mlflow.sklearn.load_model(MODEL_URI)
 
-vect = joblib.load('Vectorizer.pkl','rb')
-lab_encoder = joblib.load('label_encoder.pkl','rb')
-
+# Load artifacts from bundle
+BASE_DIR = Path(__file__).resolve().parent
+vect = joblib.load(BASE_DIR / "Vectorizer.pkl")
+lab_encoder = joblib.load(BASE_DIR / "label_encoder.pkl")
 
 @app.get("/")
 def home():
@@ -31,7 +33,7 @@ def predict(input: InputData):
     text = input.text
     text =clean_text_for_prediction(text)
     emb_text = vect.transform([text])
-    prediction = load_model.predict(emb_text)
+    prediction = model.predict(emb_text)
     label = lab_encoder.inverse_transform(prediction)
  
     return {"predictions":label[0] }
