@@ -2,3 +2,4 @@ joblib
 requests
 fastapi
 pydantic
+mlflow
