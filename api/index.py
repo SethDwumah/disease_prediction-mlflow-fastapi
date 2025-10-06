@@ -1,6 +1,5 @@
 # model_serve.py
 from fastapi import FastAPI
-import mlflow
 import pandas as pd
 import os
 from pydantic import BaseModel
@@ -36,3 +35,7 @@ def predict(input: InputData):
     label = lab_encoder.inverse_transform(prediction)
  
     return {"predictions":label[0] }
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
