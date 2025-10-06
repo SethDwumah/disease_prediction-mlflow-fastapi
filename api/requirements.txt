@@ -1,0 +1,12 @@
+streamlit
+streamlit_chat
+joblib
+requests
+nltk
+numpy
+pandas
+fastapi
+uvicorn
+pydantic
+scikit-learn
+mlflow
